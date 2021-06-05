@@ -29,6 +29,7 @@ vim.wo.cursorline = true -- Enable highlighting of the current line
 vim.o.showtabline = 2 -- Always show tabs
 vim.o.showmode = false -- We don't need to see things like -- INSERT -- anymore
 vim.o.backup = false -- This is recommended by coc
+vim.o.backupdir = string.format("%s/.cache/nvim/backup", os.getenv("HOME"))
 vim.o.writebackup = false -- This is recommended by coc
 vim.wo.signcolumn = "yes" -- Always show the signcolumn, otherwise it would shift the text each time
 vim.o.updatetime = 300 -- Faster completion
@@ -41,5 +42,12 @@ vim.cmd('filetype plugin on') -- filetype detection
 -- vim.o.guifont = "Hack\\ Nerd\\ Font\\ Mono"
 -- vim.o.guifont = "SauceCodePro Nerd Font:h17"
 vim.o.guifont = "FiraCode Nerd Font:h17"
+vim.o.swapfile = false
+vim.o.directory = string.format("%s/.cache/nvim/swap", os.getenv("HOME"))
 
+-- persistent undo
+vim.o.undodir = string.format("%s/.cache/nvim/undo", os.getenv("HOME"))
+vim.o.undofile = true
+vim.o.undolevels = 1000
+vim.o.undoreload = 10000
 -- vim.o.guifont = "JetBrains\\ Mono\\ Regular\\ Nerd\\ Font\\ Complete"
