@@ -43,6 +43,18 @@ utils.define_augroups({
         -- {'User', 'GoyoLeave', 'lua require(\'galaxyline\').disable_galaxyline()'},
         -- {'User', 'GoyoEnter', 'lua require(\'galaxyline\').galaxyline_augroup()'},
     },
+    _auto_resize = {
+        {'VimResized ', '*', 'wincmd ='},
+    },
+    _auto_reload = {
+        {'CursorHold', '*', 'silent! checktime'},
+    },
+    _mode_switching = {
+        {'InsertEnter', '*', 'setlocal number norelativenumber nocursorline'},
+        {'InsertLeave ', '*', 'setlocal relativenumber cursorline'},
+        {'WinEnter', '*', 'setlocal cursorline'},
+        {'WinLeave', '*', 'setlocal nocursorline'},
+    },
     _java = {
         {'FileType', 'java', 'luafile '..CONFIG_PATH..'/lua/lsp/java-ls.lua'},
         {'FileType', 'java', 'nnoremap ca <Cmd>lua require(\'jdtls\').code_action()<CR>'}
