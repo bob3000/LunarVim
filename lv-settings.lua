@@ -14,7 +14,8 @@ O.auto_close_tree = 0
 O.wrap_lines = false
 O.timeoutlen = 100
 O.document_highlight = true
-O.extras = true
+O.extras = false
+O.leader_key = ' '
 
 -- dashboard
 -- O.dashboard.custom_header = {""}
@@ -71,3 +72,6 @@ O.rust.autoformat = true
 
 -- Turn off relative_numbers
 -- O.relative_number = false
+
+-- Turn off cursorline
+-- O.cursorline = false
